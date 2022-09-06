@@ -6,7 +6,7 @@ public class Ex1Ex2 {
 
 
         //System.out.println(isPowerOfTwoVLob(Integer.parseInt(args[0])));
-        System.out.println(sumTrue(2.0001, 2, 4));
+        System.out.println(sumTrue(2.001, 2, 4));
 
 
 
@@ -14,10 +14,7 @@ public class Ex1Ex2 {
 
     //TODO как написать небольшой тест?
     private static boolean sumTrue(double a, double b, double c){
-        double check = a + b;
-        double accuracy = Math.pow(10, -4);
-        return Math.abs(c - check) <= accuracy;
-
+        return Math.abs(c - (a + b)) <= Math.pow(10, -4);
     }
 
     private static boolean isPowerOfTwo1(Integer number){
