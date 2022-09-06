@@ -6,7 +6,8 @@ public class Ex1Ex2 {
 
 
         //System.out.println(isPowerOfTwoVLob(Integer.parseInt(args[0])));
-        System.out.println(sumTrue(2.001, 2, 4));
+      //  System.out.println(sumTrue(2.001, 2, 4));
+        System.out.println(isPowerOfTwoBinaryArithmetic(0));
 
 
 
