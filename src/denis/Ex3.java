@@ -4,7 +4,7 @@ public class Ex3 {
 
     public static void main(String[] args) {
 
-        System.out.println(isPalindrome(args[0]));
+        System.out.println(isPalindrome("Was it a cat I saw?"));
     }
     static boolean isPalindrome(String rawStr) {
 
@@ -12,14 +12,23 @@ public class Ex3 {
                 .replaceAll("[^a-zA-z0-9]", "")
                 .toLowerCase();
 
-        int len = str.length();
+        StringBuilder sb = new StringBuilder().append(str);
+        StringBuilder sbReversed = new StringBuilder().append(sb).reverse();
 
-        for (int i = 0; i < len / 2 ; i++) {
-            if (str.charAt(i) != str.charAt(len - i - 1))
-                return false;
-        }
 
-        return true;
+        boolean equals = sb.toString().equals(sbReversed.toString());
+        return equals;
+
+
+
+//        int len = str.length();
+//
+//        for (int i = 0; i < len / 2 ; i++) {
+//            if (str.charAt(i) != str.charAt(len - i - 1))
+//                return false;
+//        }
+//
+//        return true;
 //        for (int k = len - 1; k >= 0; k--) {
 //            char nextChar = str.charAt(k);
 //            str2 = str2.concat(String.valueOf(nextChar));

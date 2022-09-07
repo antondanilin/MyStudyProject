@@ -7,7 +7,10 @@ public class Ex1Ex2 {
 
         //System.out.println(isPowerOfTwoVLob(Integer.parseInt(args[0])));
       //  System.out.println(sumTrue(2.001, 2, 4));
+        System.out.println();
+        System.out.println(isPowerOfTwo1(-128));
         System.out.println(isPowerOfTwoBinaryArithmetic(0));
+        System.out.println(isPowerOfTwoVLob(-64));
 
 
 
@@ -20,9 +23,8 @@ public class Ex1Ex2 {
 
     private static boolean isPowerOfTwo1(Integer number){
 
-        int absNumber = Math.abs(number);
 
-        return absNumber != 0 && (Integer.highestOneBit(absNumber) == absNumber);
+        return Math.abs(number) != 0 && Integer.bitCount(Math.abs(number)) == 1;
 
     }
 
@@ -30,7 +32,8 @@ public class Ex1Ex2 {
 
         int absNumber = Math.abs(initialNumber);
 
-        return (absNumber * ( absNumber & (absNumber - 1) ) == 0);
+        return  absNumber != 0 && ((absNumber & (absNumber - 1)) == 0);
+
 
 
     }
@@ -39,10 +42,10 @@ public class Ex1Ex2 {
 
         int absNumber = Math.abs(initialNumber);
 
-        if (absNumber == 0 || absNumber == 1) return true;
+        if (absNumber == 1) return true;
 
         int k = absNumber;
-        while (k % 2 == 0) k = k / 2;
+        while (k % 2 == 0 && k != 0) k = k / 2;
 
         return k == 1;
 
